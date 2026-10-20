@@ -1,6 +1,5 @@
 pipeline:
-  description: Build stage that clones the Harness-CI-CD-Zero-to-Hero repository
-    and prints hello world.
+  description: Build stage that clones the Harness-CI-CD-Zero-to-Hero repository and prints hello world.
   tags:
     ai_generated: ""
   inputs:
@@ -16,6 +15,10 @@ pipeline:
   stages:
     - id: dev
       name: dev
+      runtime: cloud
+      platform:
+        os: linux
+        arch: amd64
       steps:
         - run:
             script: echo "hello world"
